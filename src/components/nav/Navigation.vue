@@ -14,7 +14,7 @@
 
 <style lang="scss" scoped>
 header {
-  @apply bg-darkblue fixed top-0 w-full;
+  @apply bg-darkblue fixed top-0 w-full z-50;
 }
 nav {
   @apply mx-auto container px-7 h-16 flex items-center;

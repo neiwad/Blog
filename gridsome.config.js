@@ -2,7 +2,10 @@ const tailwindcss = require('tailwindcss')
 const autoprefixer = require('autoprefixer')
 
 module.exports = {
-  siteName: 'Gridsome',
+  siteName: 'NEIWAD | Le Blog',
+  siteDescription: "Bienvenue sur Le Blog. Ici je parle de web, d'électronique et de blockchains!",
+  siteUrl: "https://blog.neiwad.io",
+  lang: "fr",
   templates: {
     Tag: [
       {

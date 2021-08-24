@@ -9,6 +9,7 @@
   "dependencies": {
     "@gridsome/source-filesystem": "^0.6.2",
     "@gridsome/transformer-remark": "^0.6.4",
+    "@tailwindcss/line-clamp": "^0.2.1",
     "@tailwindcss/postcss7-compat": "^2.2.7",
     "autoprefixer": "^9",
     "gridsome": "^0.7.0",

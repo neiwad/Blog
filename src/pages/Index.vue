@@ -1,17 +1,35 @@
 <template>
   <Layout>
     <Trends />
-    <Categories />
+    <Categories class="mt-8" />
   </Layout>
 </template>
+
+<static-query>
+query {
+  metadata {
+    siteName
+    siteDescription
+  }
+}
+</static-query>
 
 <script>
 import Container from "@/components/Container";
 import Trends from "@/components/pages/home/Trends";
 import Categories from "@/components/pages/home/Categories";
 export default {
-  metaInfo: {
-    title: "Hello, world!",
+  metaInfo() {
+    return {
+      title: this.$static.metadata.siteName,
+      meta: [
+        {
+          key: "description",
+          name: "description",
+          content: this.$static.metadata.siteDescription,
+        },
+      ],
+    };
   },
   components: {
     Container,

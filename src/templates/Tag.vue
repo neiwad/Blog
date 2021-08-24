@@ -2,9 +2,7 @@
   <Layout :title="this.$route.params.id">
     <Container>
       <h2>All {{ $route.params.id }} posts</h2>
-      <article v-for="post in posts" :key="post.id">
-        {{ post.title }}
-      </article>
+      <PostCard v-for="post in posts" :key="post.id" :post="post" />
     </Container>
   </Layout>
 </template>
@@ -19,6 +17,7 @@ query Tag ($id: ID!) {
             id
             title
             path
+            description
             content
           }
         }
@@ -29,11 +28,15 @@ query Tag ($id: ID!) {
 </page-query>
 
 <script>
+import PostCard from "@/components/PostCard";
 export default {
   metaInfo() {
     return {
       title: this.$route.params.id,
     };
+  },
+  components: {
+    PostCard,
   },
   computed: {
     posts() {
