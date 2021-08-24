@@ -2,7 +2,9 @@
   <Layout :title="this.$route.params.id">
     <Container>
       <h2>All {{ $route.params.id }} posts</h2>
-      <PostCard v-for="post in posts" :key="post.id" :post="post" />
+      <div class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+        <PostCard v-for="post in posts" :key="post.id" :post="post" />
+      </div>
     </Container>
   </Layout>
 </template>
@@ -19,6 +21,7 @@ query Tag ($id: ID!) {
             path
             description
             content
+            date(format: "YYYY-MM-DD")
           }
         }
       }

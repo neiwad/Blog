@@ -10,6 +10,7 @@
       >
         <h1>{{ post.title }}</h1>
       </div>
+      <Tags :tags="post.tags" />
       <div v-html="post.content" class="postContent"></div>
     </Container>
   </Layout>
@@ -19,6 +20,9 @@
 query Post ($path: String!) {
   post(path: $path){
     title
+    tags{
+      id
+    }
     cover
     content
   }
@@ -26,7 +30,11 @@ query Post ($path: String!) {
 </page-query>
 
 <script>
+import Tags from "@/components/Tags";
 export default {
+  components: {
+    Tags,
+  },
   created() {
     console.log(this.$path);
   },
@@ -57,7 +65,7 @@ export default {
   pre {
     @apply bg-white p-4 rounded-xl my-4;
     code {
-      @apply text-black;
+      @apply text-black whitespace-normal;
     }
   }
 }

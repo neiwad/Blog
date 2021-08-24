@@ -26,22 +26,22 @@
       <p class="text-white line-clamp-3">
         {{ post.description }}
       </p>
-      <div class="flex flex-wrap mt-4">
-        <div v-for="tag in post.tags" :key="tag.id" class="tag">
-          #{{ tag.id }}
-        </div>
-      </div>
+      <Tags class="mt-4" :tags="post.tags" />
     </div>
   </g-link>
 </template>
 
 <script>
+import Tags from "@/components/Tags";
 export default {
   props: {
     post: {
       type: Object,
       required: true,
     },
+  },
+  components: {
+    Tags,
   },
 };
 </script>
@@ -58,9 +58,6 @@ export default {
   .img_container {
     @apply relative bg-center bg-cover bg-yellow;
     padding-top: 56.25%;
-  }
-  .tag {
-    @apply bg-pink mr-2 mt-2 px-2 py-1 rounded;
   }
 }
 </style>
