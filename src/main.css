@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+h1 {
+  @apply text-yellow font-black text-6xl md:text-8xl mb-10;
+}
+
 h2 {
   @apply text-yellow font-bold text-6xl mb-10;
+}
+h3 {
+  @apply text-purple text-4xl mb-5;
+}
+
+p {
+  @apply text-white;
 }

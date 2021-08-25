@@ -6,15 +6,14 @@
         <span class="text-pink text-sm">Le blog</span>
       </g-link>
       <div class="flex-1"></div>
-      <g-link class="nav__link" to="/">Home</g-link>
-      <g-link class="nav__link" to="/about/">About</g-link>
+      <g-link class="nav__link" to="/qui-suis-je/">Qui suis-je?</g-link>
     </nav>
   </header>
 </template>
 
 <style lang="scss" scoped>
 header {
-  @apply bg-darkblue fixed top-0 w-full;
+  @apply bg-darkblue fixed top-0 w-full z-50;
 }
 nav {
   @apply mx-auto container px-7 h-16 flex items-center;
